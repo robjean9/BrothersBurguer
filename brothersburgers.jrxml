@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="brothersburgers" language="groovy" pageWidth="226" pageHeight="850" columnWidth="226" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="9b9ede5e-5095-4734-ac27-6b7327820a9a">
+	<property name="ireport.zoom" value="2.5937424601000036"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="pedido_idped" class="java.lang.Integer"/>
+	<field name="produto_idprod" class="java.lang.Integer"/>
+	<field name="produto_nome" class="java.lang.String"/>
+	<field name="produto_preco" class="java.lang.Double"/>
+	<field name="itenspedido_obs" class="java.lang.String"/>
+	<variable name="soma" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{produto_preco}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="75">
+			<textField>
+				<reportElement x="43" y="36" width="71" height="17" uuid="360b2d7b-c1b6-45df-a91d-c9cb1b6ca76b"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pedido_idped}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="38" width="46" height="14" uuid="1541c78e-4173-4a22-b7cb-71d661ca618e"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[PEDIDO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="51" y="0" width="112" height="20" uuid="bc52f9bc-2d27-49e5-a4e2-2d5545e7fcbc"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="10"/>
+				</textElement>
+				<text><![CDATA[BROTHER'S BURGERS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="68" y="13" width="91" height="20" uuid="ea726db7-5bf2-4f54-9597-c1971960aff5"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="10"/>
+				</textElement>
+				<text><![CDATA[(42)-3323-1900]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="55" width="76" height="20" uuid="80b3c803-003a-40b0-8d38-b9bd778f7740"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[NOME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="55" width="30" height="20" uuid="20dc572c-e6de-4d66-be39-9e214f344709"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[CÓD. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="171" y="55" width="40" height="20" uuid="924b2843-4262-4426-8e7a-adaccf42c655"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[VALOR]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="67" width="226" height="1" uuid="2fc358c4-29fe-43f2-9772-2e4c8e1dfc6e"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="37">
+			<textField pattern="#,##0.00">
+				<reportElement x="160" y="0" width="59" height="20" uuid="68c0dfe1-961b-4608-946a-faee32bf4670"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{produto_preco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="0" width="14" height="20" uuid="f75d968b-eae0-4c6b-bc4f-06ccb345c07c"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{produto_idprod}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="15" y="16" width="180" height="20" uuid="637a731a-57a5-47ec-9eb8-e02bc2ece352"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{itenspedido_obs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="0" width="151" height="20" uuid="7218aed8-1438-4e73-852a-65d25d738974"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{produto_nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="100">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="60" y="15" width="64" height="20" uuid="74226eeb-1b55-41a5-a7e5-25bedfd27c9b"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="124" y="15" width="43" height="20" uuid="1702547c-4789-4889-a203-a542cf9c5d65"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="-1" width="54" height="20" uuid="5bca1f11-301b-45ac-96b7-b6c807db6760"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="9"/>
+				</textElement>
+				<text><![CDATA[TOTAL:                               	                 ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="-7" width="226" height="1" uuid="92c8e577-cabb-478e-950a-3f4622cea760"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField pattern="R$  #,##0.00">
+				<reportElement x="146" y="-1" width="73" height="20" uuid="0b4f8e24-e1fe-44e1-b148-447061c5880e"/>
+				<textElement>
+					<font fontName="Ecofont Vera Sans" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{soma}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
