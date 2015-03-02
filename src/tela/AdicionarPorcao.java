@@ -10,6 +10,7 @@ import bd.BdPorcao;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.table.DefaultTableModel;
+import vo.Lanche;
 import vo.Porcao;
 
 /**
@@ -110,9 +111,10 @@ public class AdicionarPorcao extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bConcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bConcluirActionPerformed
-       DefaultTableModel modelo = (DefaultTableModel) TelaVendaProdutos.tPorcoes.getModel();
-        
-        modelo.addRow(new Object[]{1,cmbPorcao.getSelectedItem().toString(),});
+       BdPorcao bdp = new BdPorcao();
+        DefaultTableModel modelo = (DefaultTableModel) TelaVendaProdutos.tPorcoes.getModel();
+        Porcao p = bdp.localizaNome(cmbPorcao.getSelectedItem().toString());
+        modelo.addRow(new Object[]{p.getIdporcao(),cmbPorcao.getSelectedItem().toString(),p.getPreco()});
         TelaVendaProdutos.contaTotal();
         this.dispose();
     }//GEN-LAST:event_bConcluirActionPerformed

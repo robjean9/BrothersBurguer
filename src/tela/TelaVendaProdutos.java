@@ -9,7 +9,6 @@ package tela;
 
 import bd.BdComplemento;
 import bd.BdLanche;
-import com.itextpdf.text.PageSize;
 import java.awt.Point;
 import java.io.OutputStream;
 import java.text.DateFormat;
