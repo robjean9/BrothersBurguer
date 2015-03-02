@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="94d3afef-3e5f-47c8-8ffc-02820a2136b9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     pedido.`idped` AS pedido_idped,
+     produto.`nome` AS produto_nome,
+     produto.`preco` AS produto_preco,
+     itenspedido.`idprod` AS itenspedido_idprod,
+     itenspedido.`idped` AS itenspedido_idped,
+     itenspedido.`comp1` AS itenspedido_comp1,
+	 itenspedido.`comp2` AS itenspedido_comp2,
+	 itenspedido.`comp3` AS itenspedido_comp3,
+ 	 itenspedido.`comp4` AS itenspedido_comp4,
+	 itenspedido.`comp5` AS itenspedido_comp5,
+	 itenspedido.`comp6` AS itenspedido_comp6,
+	 itenspedido.`comp7` AS itenspedido_comp7,
+	 itenspedido.`comp8` AS itenspedido_comp8,
+	 itenspedido.`obs` AS itenspedido_obs,
+	 itenspedido.`obs2` AS itenspedido_obs2,
+	 itenspedido.`obs3` AS itenspedido_obs3
+
+FROM
+     `pedido` pedido INNER JOIN `itenspedido` itenspedido ON pedido.`idped` like itenspedido.`idped`
+     INNER JOIN `produto` produto ON itenspedido.`idprod` like produto.`idprod` ORDER BY pedido.`idped` DESC]]>
+	</queryString>
+	<field name="pedido_idped" class="java.lang.Integer"/>
+	<field name="produto_nome" class="java.lang.String"/>
+	<field name="produto_preco" class="java.lang.Double"/>
+	<field name="itenspedido_idprod" class="java.lang.Integer"/>
+	<field name="itenspedido_idped" class="java.lang.Integer"/>
+	<field name="itenspedido_comp1" class="java.lang.String"/>
+	<field name="itenspedido_comp2" class="java.lang.String"/>
+	<field name="itenspedido_comp3" class="java.lang.String"/>
+	<field name="itenspedido_comp4" class="java.lang.String"/>
+	<field name="itenspedido_comp5" class="java.lang.String"/>
+	<field name="itenspedido_comp6" class="java.lang.String"/>
+	<field name="itenspedido_comp7" class="java.lang.String"/>
+	<field name="itenspedido_comp8" class="java.lang.String"/>
+	<field name="itenspedido_obs" class="java.lang.String"/>
+	<field name="itenspedido_obs2" class="java.lang.String"/>
+	<field name="itenspedido_obs3" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="36" y="16" width="100" height="20" uuid="e90ca1ca-7abf-45dd-ae20-114b3b2d9a2c"/>
+				<textFieldExpression><![CDATA[$F{pedido_idped}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="262" splitType="Stretch">
+			<staticText>
+				<reportElement x="163" y="0" width="100" height="20" uuid="05bb03c2-ea57-47fe-95de-a10ed9cdf6a0"/>
+				<text><![CDATA[produto_nome]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="163" y="20" width="100" height="20" uuid="d8a717cf-cd82-4399-8785-faf2b0cc988a"/>
+				<textFieldExpression><![CDATA[$F{produto_nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="283" y="0" width="100" height="20" uuid="d330b222-cb5d-4c9f-a6ba-3e93eef18ead"/>
+				<text><![CDATA[produto_preco]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="283" y="20" width="100" height="20" uuid="6c78ae95-9cdc-4105-8183-18df602b027c"/>
+				<textFieldExpression><![CDATA[$F{produto_preco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="124" height="20" uuid="5364e87c-36d6-465a-a906-5b2587680dc4"/>
+				<textFieldExpression><![CDATA[$F{itenspedido_idprod}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="b3befaac-aa33-428e-92df-b39360ddca42"/>
+				<text><![CDATA[itenspedido_idprod]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="11" y="37" width="162" height="20" isRemoveLineWhenBlank="true" uuid="48c54658-0f46-4065-b567-76cac008188e"/>
+				<textFieldExpression><![CDATA[$F{itenspedido_comp1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="11" y="57" width="162" height="20" isRemoveLineWhenBlank="true" uuid="30cc9a84-bdbf-4378-a39d-76b0ae1e7186"/>
+				<textFieldExpression><![CDATA[$F{itenspedido_comp2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="11" y="77" width="162" height="20" isRemoveLineWhenBlank="true" uuid="a89c13d7-9bec-4d2c-af90-1d71d43bff5e"/>
+				<textFieldExpression><![CDATA[$F{itenspedido_comp3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="11" y="97" width="162" height="20" isRemoveLineWhenBlank="true" uuid="d3c77aa3-563c-47ce-a0bb-bb3a931b2e35"/>
+				<textFieldExpression><![CDATA[$F{itenspedido_comp4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="11" y="117" width="162" height="20" isRemoveLineWhenBlank="true" uuid="0fa84086-6100-4dbf-bb34-6fa7e64e552d"/>
+				<textFieldExpression><![CDATA[$F{itenspedido_comp5}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="11" y="137" width="162" height="20" isRemoveLineWhenBlank="true" uuid="69ee6491-2c21-43ea-bdce-a01d7303c312"/>
+				<textFieldExpression><![CDATA[$F{itenspedido_comp6}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="11" y="157" width="162" height="20" isRemoveLineWhenBlank="true" uuid="265b91f5-1fb8-40f2-8123-5f6794093c6c"/>
+				<textFieldExpression><![CDATA[$F{itenspedido_comp7}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="11" y="177" width="162" height="20" isRemoveLineWhenBlank="true" uuid="67e5e23f-e59e-4c46-8dc3-e82a0ee74caa"/>
+				<textFieldExpression><![CDATA[$F{itenspedido_comp8}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="11" y="197" width="162" height="20" isRemoveLineWhenBlank="true" uuid="c1c5177b-1634-4d6f-811e-b971d8f6cd40"/>
+				<textFieldExpression><![CDATA[$F{itenspedido_obs}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="11" y="217" width="162" height="20" isRemoveLineWhenBlank="true" uuid="94b583b1-f8fe-4925-a8f5-9f46ebe75e10"/>
+				<textFieldExpression><![CDATA[$F{itenspedido_obs2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="11" y="237" width="162" height="20" isRemoveLineWhenBlank="true" uuid="7bc2717d-43f9-471b-b97f-b8a720daa842"/>
+				<textFieldExpression><![CDATA[$F{itenspedido_obs3}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="299" splitType="Stretch"/>
+	</summary>
+</jasperReport>
